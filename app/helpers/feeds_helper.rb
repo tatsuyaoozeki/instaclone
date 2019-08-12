@@ -5,5 +5,5 @@ module FeedsHelper
     elsif aciton_name == 'edit'
       feed_path
     end
-
+  end
 end
