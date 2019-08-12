@@ -1,6 +1,9 @@
 <h1>ブログ詳細画面</h1>
-<p<%= @blog.content %></p>
-<p<%= image_tag @feed.image.url %></p>
+<p<%= @feed.content %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @feed.image.url %>
+</p>
 
 <% unless @feed.user_id == current_user.id %>
   <% if @favorite.present? %>
@@ -9,3 +12,6 @@
     <%= link_to 'お気に入りする', favorites_path(feed_id: @feed.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
 <% end %>
+
+<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Back', feeds_path %>

@@ -1,7 +1,7 @@
 <h1>投稿一覧</h1>
 
 <div>
-  <%= @feeds.each do |feed| %>
+  <% @feeds.each do |feed| %>
     <%= feed.user.name %>
     <%= feed.content %>
     <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
@@ -9,6 +9,5 @@
     <%= link_to '編集', edit_feed_path(feed.id), data: { confirm: '本当に編集していいですか？' } %>
     <%= link_to '削除', feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
   <% end %>
-
-  <%= link_to '新しくブログを投稿する', new_feed_path %>
 </div>
+<%= link_to '新しく投稿する', new_feed_path %>

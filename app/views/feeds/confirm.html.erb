@@ -1,14 +1,12 @@
 <h3>以下の内容で、送信する。</h3>
 
-<%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
-  <%= image_tag(@feed.image.url) if @feed.iamge && @feed.image.url %>
+<%= form_with(model: @feed, url: feeds_path, local: true) do |f| %>
+  <%= image_tag(@feed.image.url) %>
+  <%= hidden_field_tag :"cache[image]", @feed.image.cache_name %>
   <%= f.hidden_field :content %>
   <%= f.hidden_field :image_cache %>
-  <%= form.submit  "投稿する" %>
-<% end %>
+  <p>本文:<%= @feed.content %></p>
+  <%= f.submit  "投稿する" %>
 
-<%= form_with(model:@feed, url: new_feed_path, local:true, mehod: "get") do |f| %>
-  <%= f.hidden_field :content %>
-  <%= f.hidden_field :image_cache %>
-  <%= form.submit "戻る", name: 'back' %>
+  <%= f.submit "戻る", name: 'back' %>
 <% end %>

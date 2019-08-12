@@ -1,0 +1,5 @@
+<%= form_with(model: @user, local: true, url: user_update_path) do |f| %>
+  <p>ユーザ名:<%= @user.name %></p>
+  <p>画像<%= @user.image.nanme %></p>
+  <p>メールアドレス<%= @user.email %></p>
+<% end %>
