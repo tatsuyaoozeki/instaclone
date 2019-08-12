@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: [:show, :edit, :destroy]
-  
+  before_action :set_feed, only: [:show, :edit, :update, :destroy]
+
   def index
     @feeds = Feed.all
   end
@@ -33,6 +33,11 @@ class FeedsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @feed.destroy
+    redirect_to feeds_path, notice: "削除しました！"
   end
 
 

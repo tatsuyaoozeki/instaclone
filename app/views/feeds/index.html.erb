@@ -6,7 +6,8 @@
     <%= feed.content %>
     <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
     <%= link_to '詳細', feed_path(feed.id) %>
-    <%= link_to '編集', edit_feed_path(feed.id) %>
+    <%= link_to '編集', edit_feed_path(feed.id), data: { confirm: '本当に編集していいですか？' } %>
+    <%= link_to '削除', feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
   <% end %>
 
   <%= link_to '新しくブログを投稿する', new_feed_path %>
