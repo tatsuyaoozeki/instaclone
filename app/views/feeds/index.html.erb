@@ -1,2 +1,12 @@
-<h1>Feeds#index</h1>
-<p>Find me in app/views/feeds/index.html.erb</p>
+<h1>投稿一覧</h1>
+
+<div>
+  <%= @feeds.each do |feed| %>
+    <%= feed.user.name %>
+    <%= feed.content %>
+    <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
+    <%= link_to '詳細を確認する', feed_path(feed.id) %>
+  <% end %>
+
+  <%= link_to '新しくブログを投稿する', new_feed_path %>
+</div>
