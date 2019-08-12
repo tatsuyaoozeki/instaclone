@@ -1,0 +1,11 @@
+<%= form_with(model: Feed.new, local: true) do |form| %>
+  <div class="feed_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="feedfield">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  <%= form.submit %>
+<% end %>
