@@ -1,3 +1,184 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.log_in {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: #f5f5f5;
+}
+
+.signin_container {
+  background-color: #fff;
+  padding: 6px 45px 12px;
+  margin: 180px auto 0;
+  border-radius: 1px;
+  border: solid 1px #e6e6e6;
+}
+
+.form_signup {
+  // background-color: #fff;
+  // color: #262626;
+  // max-width: 350px;
+  // width: 100%;
+  // margin-top: 12px;
+  // align-items: stretch;
+  // justify-content: center;
+  // flex-grow: 1;
+  // padding: 10px 0;
+  // border: solid 1px #e6e6e6;
+  // border-radius: 1px;
+  max-width: 350px;
+  width: 100%;
+  padding:  10px 0;
+  margin-top: 12px;
+}
+
+.form-signup .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 1em;
+  font-size: 1em;
+}
+
+.form-control {
+  margin: 0 auto 6px;
+  background-color: #fafafa;
+}
+
+.h3 {
+  font-family: 'Pacifico', cursive;
+  height: 51px;
+  width: 175px;
+  margin: 0 0 70px;
+  padding: 0;
+  font-size: 48px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+// .form_signin .form_control:focus {
+//   z-index: 2;
+// }
+
+.form_signin input[type="email"] {
+  margin-bottom: -0.8em;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 0.8em;
+}
+
+.session-btn {
+  background-color: #3897f0;
+  border: solid 1px #3897f0;
+  outline: 0!important;
+  color: #fff;
+  border-radius: 1px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  width: auto;
+  margin: 15px auto 20px;
+}
+
+.fbp {
+  background-color: #fff;
+  margin: 15px 40px 0;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.fb-icon2 {
+  margin-right: 8px;
+  top: 3px;
+  font-size: 16px;
+}
+
+.fb-link2 {
+  cursor: pointer;
+  display: block;
+  padding: 5px 9px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  width: auto;
+}
+
+.fb-link2 a {
+  color: #385185;
+}
+
+.session_form {
+  margin: 5px 10px 9px;
+  flex-direction: row;
+}
+
+.sel {
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  margin: 0 18px;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.bord {
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: #efefef;
+  height: 1px;
+  position: relative;
+  top: .45em;
+}
+
+.fg-ps {
+  text-align: center;
+  font-size: 14px;
+}
+
+.s_a {
+  background-color: #fff;
+  color: #262626;
+  max-width: 350px;
+  width: 100%;
+  height: 100px;
+  margin-top: 12px;
+  border: solid 1px #e6e6e6;
+  border-radius: 1px;
+}
+
+p.signup-link {
+  font-size: 14px;
+  font-family: sans-serif;
+  margin: auto;
+  text-align: center;
+}

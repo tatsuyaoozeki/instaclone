@@ -1,54 +1,84 @@
 <div class="container-fluid signup">
   <article class="content">
-    <div class="signup-image">
+    <div class="signup-image"></div>
+      <div class="signup-form">
+        <div class="form-cont">
+        <h1>SnapGraph</h1
+          <form class="xform">
+            <h2>友達の写真や動画をチェックしよう</h2>
+          </form>
 
-    </div>
-
-    <div class="signup-form">
-      <div class="form-cont">
-      <h1>SnapGraph</h1
-        <form class="xform">
-          <h2>友達の写真や動画をチェックしよう</h2>
-          <!-- <input type="button" value="Facebookでログイン" class="fb-link"> -->
           <div class="fb-btn">
             <button class="fb-link" type="button"><i class="fab fa-facebook-square fb-icon"></i>Facebookでログイン</button>
           </div>
+
           <div class="select-form">
-          <div class="bord"></div>
-          <p class="sel">または</p>
-          <div class="bord"></div>
+            <div class="bord"></div>
+            <p class="sel">または</p>
+            <div class="bord"></div>
           </div>
-          <dt>
+
           <%= form_with(model: @user, local: true) do |f| %>
-            <dd><%= f.email_field :email, class:"form-control", placeholder:"メールアドレスまたは電話番号" %></dd>
+            <dt>
+              <dd><%= f.email_field :email, class:"form-control", placeholder:"メールアドレスまたは電話番号" %></dd>
 
-            <dd><%= f.text_field :name, class:"form-control", placeholder:"フルネーム" %></dd>
+              <dd><%= f.text_field :name, class:"form-control", placeholder:"フルネーム" %></dd>
 
-            <%= f.label :image_name %>
-            <%= f.file_field :image_name %>
 
-            <dd><%= f.password_field :password, class:"form-control", placeholder:"パスワード" %></dd>
+              <dd><%= f.password_field :password, class:"form-control", placeholder:"パスワード" %></dd>
 
-            <dd><%= f.password_field :password_confirmation,class:"form-control", placeholder:"パスワード(確認用)" %></dd>
+              <dd><%= f.password_field :password_confirmation,class:"form-control", placeholder:"パスワード(確認用)" %></dd>
 
-            <dd><%= f.submit "登録する", class: "btn btn-primary btn-block" %></dd>
+              <dd><%= f.submit "登録する", class: "btn btn-block" %></dd>
+            </dt>
           <% end %>
-          </dt>
+
+
           <% if @user.errors.any? %>
             <div id="error_explanation">
-              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
               <ul>
               <% @user.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
+                <li class="er-mg"><%= message %></li>
               <% end %>
               </ul>
             </div>
           <% end %>
+
+          <p class="policy">登録することで、Facebookの<a href="#">利用<br>規約、データに関するポリシー、<br>Cookieポリシー</a>に同意するものと<br>します。</p>
+
         </div>
+          <div class="acount">
+            <p class="login-link">アカウントをお持ちですか？<%= link_to "ログインする", new_session_path %></p>
+          </div>
+          <div class="dl">
+            <p>ダウンロード</p>
+            <aside class="dl-icon">
+              <div class="app"></div>
+              <div class="google"></div>
+            </aside>
+          </div>
       </div>
-        <div>
-          <p class="login-link">アカウントをお持ちですか？<%= link_to "ログインする", new_session_path %></p>
-        </div>
-    </div>
-  </div>
+  </article>
+    <footer class="footer">
+      <div class="ft-cont">
+        <nav class="ft-nav">
+          <ul class="ft-ul">
+            <li class="ft-link">INSTAGRAMについて</li>
+            <li class="ft-link">サポート</li>
+            <li class="ft-link">プレス</li>
+            <li class="ft-link">API</li>
+            <li class="ft-link">求人</li>
+            <li class="ft-link">プライバシー</li>
+            <li class="ft-link">利用規約</li>
+            <li class="ft-link">ディレクトリ</li>
+            <li class="ft-link">プロフィール</li>
+            <li class="ft-link">ハッシュタグ</li>
+            <li class="ft-link">言語</li>
+          </ul>
+        </nav>
+        <span>
+          ©︎2019 SNAPGRAPH.
+        </span>
+      </div>
+    </footer>
 </div>

@@ -19,6 +19,7 @@ class FeedsController < ApplicationController
       render :new
     else
       if @feed.save
+        ContactMailer.contact_mail(@feed).deliver
         redirect_to feeds_path, notice: "作成しました！"
       else
         render :new

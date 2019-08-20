@@ -13,10 +13,108 @@
  *= require bootstrap/dist/css/bootstrap.min
  *= require_tree .
  *= require_self
- */
+*/
 
 
 html,
 body {
   height: 100%;
+}
+
+
+
+.dl p {
+  text-align: center;
+  font-weight: normal;
+  margin: 20px;
+}
+
+.dl-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  background-image: url("/images/app.png");
+  background-size: 130px 40px;
+  background-repeat: no-repeat;
+  flex-basis: 130px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.google {
+  background-image: url("/images/google.png");
+  background-size: 130px 40px;
+  background-repeat: no-repeat;
+  flex-basis: 130px;
+  height: 40px;
+}
+
+.footer {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  position: relative;
+  order: 5;
+  padding: 0 20px;
+  background-color: #fafafa;
+  vertical-align: baseline;
+  border-top: solid 1px #efefef;
+}
+
+.ft-icon {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 auto;
+  text-transform: uppercase;
+  max-width: 935px;
+  width: 100%;
+  justify-content: space-around
+}
+
+nav.ft-nav {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.ft-ul {
+  flex-grow: 1;
+  margin-left: 18%;
+}
+
+.ft-link {
+  list-style-type: none;
+  display: inline-block;
+  margin-bottom: 3px;
+  margin-right: 18px;
+  font-weight: 600;
+  color: dark_navy;
+  font-size: 14px;
+}
+
+span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: 600;
+  vertical-align: baseline;
+  text-align: center;
+  color: #999;
 }

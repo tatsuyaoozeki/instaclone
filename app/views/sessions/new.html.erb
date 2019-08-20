@@ -1,11 +1,57 @@
-<h1>Log in</h1>
+<div class="log_in">
+  <div class="signin_container">
+    <div class="form_signup">
+        <h1 class="h3">SnapGraph</h1>
+        <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
 
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+          <%= f.email_field :email, class:"form-control", placeholder:"電話番号、ユーザーネーム、メールアドレス" %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+          <%= f.password_field :password, class:"form-control", placeholder:"パスワード" %>
 
-  <%= f.submit "Log in" %>
-<% end %>
+          <%= f.submit "ログイン", class:"btn btn-block session-btn" %>
+        <% end %>
+        <div class="session_form">
+          <div class="bord"></div>
+          <p class="sel">または</p>
+          <div class="bord"></div>
+        </div>
+        <div class="fbp">
+          <p class="fb-link2"><a href=""><i class="fab fa-facebook-square fb-icon2"></i>Facebookでログイン</a></p>
+        </div>
+        <p class="fg-ps"><a href="#">パスワードを忘れた場合</a></p>
+      </div>
+  </div>
+    <div class="s_a">
+      <p class="signup-link">アカウントをお持ちでないですか？<%= link_to "登録する", new_user_path %></p>
+    </div>
+    <div class="dl">
+      <p>ダウンロード</p>
+      <aside class="dl-icon">
+        <div class="app"></div>
+        <div class="google"></div>
+      </aside>
+    </div>
+</div>
+
+<footer class="footer">
+  <div class="ft-cont">
+    <nav class="ft-nav">
+      <ul class="ft-ul">
+        <li class="ft-link">INSTAGRAMについて</li>
+        <li class="ft-link">サポート</li>
+        <li class="ft-link">プレス</li>
+        <li class="ft-link">API</li>
+        <li class="ft-link">求人</li>
+        <li class="ft-link">プライバシー</li>
+        <li class="ft-link">利用規約</li>
+        <li class="ft-link">ディレクトリ</li>
+        <li class="ft-link">プロフィール</li>
+        <li class="ft-link">ハッシュタグ</li>
+        <li class="ft-link">言語</li>
+      </ul>
+    </nav>
+    <span>
+      ©︎2019 SNAPGRAPH.
+    </span>
+  </div>
+</footer>

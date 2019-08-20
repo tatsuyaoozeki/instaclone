@@ -1,31 +1,119 @@
-<h1>編集</h1>
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
-    <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<section class="edit">
+  <nav class="ed_nav">
+    <div class="ed_header">
+      <div class="ed_col">
+        <div class="ed_bow">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <div class="ed_bow">
+          <h1>SnapGraph</h1>
+        </div>
+        <div class="ed_bow"></div>
+        <div class="ed_bow"></div>
+        <div class="ed_bow"></div>
+        <div class="ed_bow"></div>
+      </div>
+    </div>
+  </nav>
 
-<%= form_with(model: @user, local: true) do |f| %>
+  <main class="ed_content">
+    <div class="BvMHM EzUlV">
+      <ul class="wW1cu">
+        <li><a href="" class="h-aRd">プロフィール編集</a></li>
+        <li><a href="" class="h-aRd">パスワードを変更</a></li>
+        <li><a href="" class="h-aRd">許可されたアプリ</a></li>
+        <li><a href="" class="h-aRd">メールまたはSMS</a></li>
+        <li><a href="" class="h-aRd">連絡先の管理</a></li>
+        <li><a href="" class="h-aRd">プライバシーとセキュリティ</a></li>
+        <li><a href="" class="h-aRd">ログインアクティビティ</a></li>
+      </ul>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+      <article class="ed_article">
+        <div class="ed_bar">
+          <div class="ed_pro">
+            <div class="M-jxE">
+              <div class="IalUJ">
+                <div class="ed_img">
+                  <%= image_tag(@user.image_name.thumb.url) if @user.image_name && @user.image_name.url %>
+                </div>
+              </div>
+            </div>
+            <h1 class="XX1Wc">
+              <%= @user.name %>
+            </h1>
+          </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+          <%= form_with(model: @user, local: true) do |f| %>
+          <div class="ed_row">
+            <div class="eE-OA">
+              <div class="ed_l"><%= f.label :name %></div>
+              <div class="ed_f"><%= f.text_field :name, class: "form_control" %></div>
+            </div>
 
-  <%= f.label :image_name %>
-  <%= f.file_field :image_name %>
+            <div class="eE-OA">
+              <div class="ed_l"><%= f.label :email %></div>
+              <div class="ed_f"><%= f.email_field :email, class: "form_control" %></div>
+            </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+            <div class="eE-OA">
+              <div class="ed_l"><%= f.label :image_name %></div>
+              <div class="ed_f"><%= f.file_field :image_name %></div>
+            </div>
 
-  <%= f.submit "編集する" %>
-<% end %>
+
+            <div class="eE-OA">
+              <div class="ed_l"><%= f.label :password %></div>
+              <div class="ed_f"><%= f.password_field :password, class: "form_control" %></div>
+            </div>
+
+
+            <div class="eE-OA">
+              <div class="ed_l"><%= f.label :password_confirmation %></div>
+              <div class="ed_f"><%= f.password_field :password_confirmation, class: "form_control" %></div>
+            </div>
+          </div>
+          <div class="eE-OA">
+            <div class="ed_l"></div>
+            <div class="ed_f"><%= f.submit "送信する" %></div>
+          </div>
+          <% end %>
+
+        </div>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li class="ed_er"><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </article>
+    </div>
+  </main>
+</section>
+<div class="ft">
+  <footer class="footer">
+    <div class="ft-cont">
+      <nav class="ft-nav">
+        <ul class="ft-ul">
+          <li class="ft-link">INSTAGRAMについて</li>
+          <li class="ft-link">サポート</li>
+          <li class="ft-link">プレス</li>
+          <li class="ft-link">API</li>
+          <li class="ft-link">求人</li>
+          <li class="ft-link">プライバシー</li>
+          <li class="ft-link">利用規約</li>
+          <li class="ft-link">ディレクトリ</li>
+          <li class="ft-link">プロフィール</li>
+          <li class="ft-link">ハッシュタグ</li>
+          <li class="ft-link">言語</li>
+        </ul>
+      </nav>
+      <span>
+        ©︎2019 SNAPGRAPH.
+      </span>
+    </div>
+  </footer>
+</div>

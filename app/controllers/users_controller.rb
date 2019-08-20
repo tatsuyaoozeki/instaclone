@@ -20,6 +20,7 @@ before_action :set_user, only: [:show, :edit, :update]
   end
 
   def show
+    @feeds = Feed.where(user_id: @user.id)
   end
 
   def edit
