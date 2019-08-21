@@ -21,34 +21,52 @@ body {
   height: 100%;
 }
 
-
-
-.dl p {
-  text-align: center;
-  font-weight: normal;
-  margin: 20px;
-}
-
-.dl-icon {
+.edit {
   display: flex;
+  justify-content: space-between;
+  height: 100%;
+  overflow: scroll;
+}
+
+.ed_nav {
+  background-color: #fafafa;
+  padding: 0;
+  order: 0;
+}
+
+.ed_header {
+  flex-basis: 75px;
+  order: 2;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  transition: height .2s ease-in-out;
+  height: 77px;
+  font-family: 'Pacifico', cursive;
+  z-index: 100;
+}
+
+.ed_col {
+  display: flex;
+  flex-direction: row;
+  height: 77px;
   justify-content: center;
+  max-width: 1010px;
+  padding: 10px 20px 26px;
+  transition: height .2s ease-in-out;
+  width: 100%;
 }
 
-.app {
-  background-image: url("/images/app.png");
-  background-size: 130px 40px;
-  background-repeat: no-repeat;
-  flex-basis: 130px;
-  height: 40px;
-  margin-right: 8px;
-}
-
-.google {
-  background-image: url("/images/google.png");
-  background-size: 130px 40px;
-  background-repeat: no-repeat;
-  flex-basis: 130px;
-  height: 40px;
+.ft {
+  position: fixed;
+  top: auto;
+  right: 0;
+  left: 0;
+  bottom:0;
+  z-index: 100;
 }
 
 .footer {

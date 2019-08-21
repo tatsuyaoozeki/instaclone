@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update]
-# before_action :ensure_correct_user, only: [:edit, :update]
+before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
     @user = User.all
@@ -33,9 +33,6 @@ before_action :set_user, only: [:show, :edit, :update]
       render :edit
     end
   end
-
-
-
 
   private
 

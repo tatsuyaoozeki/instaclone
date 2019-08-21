@@ -1,15 +1,69 @@
-<h1>投稿一覧</h1>
-<%= link_to '新しく投稿する', new_feed_path %>
-
-<div>
-  <% @feeds.each do |feed| %>
-  <table>
-    <td><%= feed.user.name %></td>
-    <td><%= feed.content %></td>
-    <td><%= image_tag(feed.image.url) if feed.image && feed.image.url %></td>
-    <td><%= link_to '詳細', feed_path(feed.id) %></td>
-    <td><%= link_to '編集', edit_feed_path(feed.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '削除', feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
-  </table>
-  <% end %>
+<div class="container-fluid feed">
+  <div class="row bg-feed">
+    <div class="col-md-4 col-md-offset-3">
+      <nav id="side_menu">
+        <ul>
+          <li class="power"><p class="current_user"><%= link_to 'Profile', user_path(current_user.id) %></p></li>
+          <li class="power"><a href=""><i class="fas fa-book-open"></i>ニュースフィード</a></li>
+          <li class="power"><a href=""><i class="fab fa-facebook-messenger"></i>Messanger</a></li>
+          <li class="power"><span>ショートカット</span></li>
+          <li class="power"><span>発見</span></li>
+          <li class="power"><a href=""><i class="fas fa-coins"></i>募金</a></li>
+          <li class="power"><a href=""><i class="far fa-flag"></i>ページ</a></li>
+          <li class="power"><a href=""><i class="fas fa-users"></i>グループ</a></li>
+          <li class="power"><a href=""><i class="far fa-calendar-alt"></i>イベント</a></li>
+          <li class="power">
+            <%= link_to new_feed_path do %>
+              <i class="fas fa-upload"></i>新規投稿を作成
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-4 text-center">
+      <% @feeds.each do |feed| %>
+      <div class="content">
+        <ul>
+          <li><%= feed.user.name %></li>
+          <li><%= feed.content %></li>
+          <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
+          <li><%= link_to '詳細', feed_path(feed.id) %></li>
+          <li><%= link_to '編集', edit_feed_path(feed.id), data: { confirm: '本当に編集していいですか？' } %></li>
+          <li><%= link_to '削除', feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <div class="navbar">
+        <h1>知り合いかも</h1>
+        <p><a href="">すべてを見る</a></p>
+        <ul>
+          <% 5.times do %>
+            <li><i class="fas fa-user-circle icon1"></i></li>
+            <li class="name">aaaaaaa</li>
+            <li class="button1"><button type="button" class="btn btn-primary my-2">友達になる</button></li>
+            <li class="button2"><button type="button" class="btn btn-secondary my-2">削除</button></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="logbar">
+         <h2 class="logs">過去ログ</h2>
+         <ol class="list-unstyled">
+           <li><a href="#">2019年08月</a></li>
+           <li><a href="#">2019年07月</a></li>
+           <li><a href="#">2019年06月</a></li>
+           <li><a href="#">2019年05月</a></li>
+           <li><a href="#">2019年04月</a></li>
+           <li><a href="#">2019年03月</a></li>
+           <li><a href="#">2019年02月</a></li>
+           <li><a href="#">2019年01月</a></li>
+           <li><a href="#">2018年12月</a></li>
+           <li><a href="#">2018年11月</a></li>
+           <li><a href="#">2018年10月</a></li>
+           <li><a href="#">2018年09月</a></li>
+         </ol>
+       </div>
+    </div>
+  </div>
 </div>

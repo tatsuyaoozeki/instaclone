@@ -1,23 +1,26 @@
-<%= form_with(model: @feed, local: true, url: choose_new_or_edit) do |form| %>
-  <% if @feed.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @feed.errors.count %>件のエラーがあります。</h2>
-      <ul>
-
-      <% @feed.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="feed_new">
+  <div class="fn_container">
+    <div class="fn_form">
+      <h1 class="h4 mb-3 font-weight-bold">新しく創る</h1>
+      <%= form_with(model: @feed, local: true, url: choose_new_or_edit) do |form| %>
+        <% if @feed.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= @feed.errors.count %>件のエラーがあります。</h2>
+            <ul>
+            <% @feed.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      <div class="feed_field">
+        <%= image_tag(@feed.image.url) if @feed.image.url %>
+        <%= form.text_field :content %>
+        <%= form.file_field :image %>
+      </div>
+      <%= form.submit %>
+    <% end %>
+    <%= link_to "一覧画面にもどる", feeds_path %>
     </div>
-  <% end %>
-
-  <div class="feed_field">
-    <%= image_tag(@feed.image.url) if @feed.image.url %>
-    <%= form.text_field :content %>
-    <%= form.label :image %>
-    <%= form.file_field :image %>
   </div>
-  <%= form.submit %>
-<% end %>
-
-<%= link_to "一覧画面にもどる", feeds_path %>
+</div>

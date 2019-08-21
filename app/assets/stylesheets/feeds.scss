@@ -1,3 +1,208 @@
 // Place all the styles related to the feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* サイドメニュー設定 */
+div.container-fluid.feed {
+  height: 100%;
+  width: 100%;
+  margin: 4em 0 0 0;
+}
+
+.row.bg-feed {
+  background-color: #FAFAFA;
+  padding-top: 2em;
+}
+
+nav#side_menu{
+  text-align: left;
+  margin-left: 45%;
+}
+
+/* コンテンツメニューを高さを合わせるため */
+nav#side_menu ul{
+  margin-top: 0;
+  padding-left: 10%;
+}
+
+/* 各メニューのスタイル */
+#side_menu ul li{
+  list-style-type: none;
+  margin-bottom: 2%;
+  line-height: 1.5em;
+  font-size: 1.5em;
+}
+
+.power span{
+  font-weight: bold;
+}
+
+/* メニューの見た目 */
+.power a{
+  vertical-align: middle;
+  font-weight: normal;
+  text-decoration: none;
+  border-radius: 0.1em;
+}
+
+.current_user::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f007";
+}
+
+/* サイドメニューにマウスが乗ったら以下の適用 */
+.power a:hover{
+  transition-property: background-color;
+  background-color: #1da1f2;
+  color: #fff;
+}
+
+// サイドメニューアイコン
+i.fas fa-u.ser-circle {
+  font-size: 1em;
+}
+
+// ツイートの設定
+div.content{
+  background-color: #fff;
+  border-radius: 0.8em;
+  padding: 0;
+  margin-bottom: 0 0 0.8em 0;
+  min-height: 300px;
+  text-overflow: hidden;
+  position: relative;
+}
+
+div.content ul {
+  padding: 0;
+}
+
+// 黒点を消す
+div.content li{
+  list-style-type: none;
+}
+
+// 友人かもが表示されるナビゲーションバー表示
+.navbar {
+  background-color: #fff;
+  width: 70%;
+  height: auto;
+  margin-bottom: 1em;
+  border-radius: 0.8em;
+}
+
+.navbar h1 {
+  font-size: 1em;
+  color: #BDBDBD;
+  font-weight: 600;
+}
+
+.navbar li {
+  list-style-type: none;
+  margin-bottom: 1.5em;
+  font-size: 4em;
+  float: left;
+}
+
+.icon1 {
+  margin-left: 0;
+  font-size: 1.5em;
+}
+
+.navbar li.name{
+  font-size: 1em;
+  padding-left:0.5em;
+  vertical-align: top;
+}
+
+.button1 {
+  margin: 0.5em 0 -0.5em -0.8em;
+}
+
+.button2 {
+  margin: 0.5em 0 -0.5em 0;
+}
+
+a.btn btn-primary {
+  margin:0;
+}
+
+.logbar {
+  background-color: #fff;
+  border-radius: 0.8em;
+  width: 50%;
+  height: auto;
+}
+
+.logs {
+  margin: 1em 0 0 1em;
+  color: #BDBDBD;
+}
+
+.list-unstyled {
+  font-size: 1.2em;
+  padding: 0 0 1em 3em;
+  line-height: 1.5em;
+}
+
+//------------------------------------------------------------------------
+// 新規投稿ページ
+.feed_new {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: #f5f5f5;
+}
+
+.fn_container {
+  background-color: #fff;
+  padding: 5% 10%;
+  margin: auto;
+  border-radius: 1em;
+  border: solid 1px #cfcfcf;
+}
+
+.fn_form {
+  width: 100%;
+  max-width: 330px;
+  padding: 1em;
+  margin: auto;
+}
+
+.fn_form, .feed_field {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 1em;
+  font-size: 1em;
+}
+
+.fn_form, .feed_field:focus {
+  z-index: 2;
+}
+
+.fn_form input[type="text"] {
+  margin-bottom: -0.8px;
+}
+
+.fn_form  input[type="text"] {
+  margin-bottom: 0.8em;
+}
+
+.h4 {
+  font-size: 30px;
+  color: #708090;
+  text-align: center;
+  margin: auto;
+}
+
+#feed_content {
+  height: 200px;
+  width: 280px;
+  overflow: auto;
+  margin: auto;
+}

@@ -1,49 +1,38 @@
-<section class="show">
-  <nav class="sh_nav">
-    <div class="sh_header">
-      <div class="sh_col">
-        <div class="sh_bow">
-          <i class="fab fa-instagram"></i>
-        </div>
-        <div class="sh_bow">
-          <h1>SnapGraph</h1>
-        </div>
-        <div class="sh_bow"></div>
-        <div class="sh_bow"></div>
-        <div class="sh_bow"></div>
-        <div class="sh_bow"></div>
-      </div>
-    </div>
-  </nav>
-  <main class="sh_main">
-    <div class="sh_d1">
-      <header class="sh_hd">
-        <div class="sh_icon">
-          <div class="sh_img">
-            <div class="sh_img2">
-              <button class="img_btn">
-                <%= image_tag(@user.image_name.thumb.url) if @user.image_name && @user.image_name.url %>
-              </button>
-            </div>
+<main class="sh_main">
+  <div class="sh_d1">
+    <header class="sh_hd">
+      <div class="sh_icon">
+        <div class="sh_img">
+          <div class="sh_img2">
+            <button class="img_btn">
+              <%= image_tag(@user.image_name.thumb.url) if @user.image_name && @user.image_name.url %>
+            </button>
           </div>
-        </div
-        <!-- <section class="sh_pro"> -->
-          <div class="sh_ed">
-            <h1 class="sh_name"><%= @user.name %></h1>
-            <div class="sh_link">
-              <button class="link_btn">
-                <span class="sh_btn">
-                  <i class="fas fa-th"></i>
-                </span>
-              </button>
-            </div>
+        </div>
+      </div
+        <div class="sh_ed">
+          <h1 class="sh_name"><%= @user.name %></h1>
+          <div class="sh_link">
+            <button class="link_btn">
+              <span class="sh_btn">
+                <i class="fas fa-th"></i>
+              </span>
+            </button>
           </div>
-            <div class="sh_ed">
-              <button class="ed_lbtn">
-                <%= link_to 'プロフィールを編集', edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？' } %>
-              </button>
-            </div>
-        <!-- </section> -->
+        </div>
+        <div class="sh_ed">
+          <button class="ed_lbtn">
+            <%= link_to 'プロフィールを編集', edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？' } %>
+          </button>
+        </div>
+        <div class="sh_ed">
+          <button class="ed_lbtn">
+            <%= link_to 'HOME', feeds_path %>
+          </button>
+          <button class="ed_lbtn">
+            <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+          </button>
+        </div>
       </header>
       <section class="sh_feed">
         <a class="sh_t">
@@ -71,38 +60,22 @@
           </span>
         </a>
         <a class="sh_t">
-          <span class="sh_tag">
-            <div class="tag_icon4">
-              <i class="fas fa-user-tag"></i>
-            </div>
-            <span class="tag_name">タグづけされている人</span>
-          </span>
-        </a>
-      </section>
+        <span class="sh_tag">
+          <div class="tag_icon4">
+            <i class="fas fa-user-tag"></i>
+          </div>
+          <span class="tag_name">タグづけされている人</span>
+        </span>
+      </a>
+    </section>
+    <aticle class="garllery_content">
       <div class="ug">
         <ul class="gallery">
           <% @feeds.each do |feed| %>
-          <li class="gallery_items">
-            <a class="gallery_box">
-              <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
-            </a>
-          </li>
+            <li class="gallery_items"><%= image_tag(feed.image.url) if feed.image && feed.image.url %></li>
           <% end %>
         </ul>
       </div>
-      <div class="ug">
-        <ul class="gallery">
-          <% @favorite.each do |v| %>
-          <li class="gallery_items">
-            <a class="gallery_box">
-              <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
-            </a>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </main>
-<!-- <p>メールアドレス: <%= @user.email %></p> -->
-<%= link_to 'HOME', feeds_path %>
-</section>
+    </aticle>
+  </div>
+</main>

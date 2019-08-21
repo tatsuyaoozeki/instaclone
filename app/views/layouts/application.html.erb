@@ -4,7 +4,7 @@
     <title>Snapgraph</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -23,7 +23,47 @@
       <%= link_to "Sign up", new_user_path %>
       <%= link_to "Login", new_session_path %>
     <% end %>
-
+    <section class="edit">
+      <nav class="ed_nav">
+        <div class="ed_header">
+          <div class="ed_col">
+            <div class="ed_bow">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <div class="ed_bow">
+              <h1>SnapGraph</h1>
+            </div>
+            <div class="ed_bow"></div>
+            <div class="ed_bow"></div>
+            <div class="ed_bow"></div>
+            <div class="ed_bow"></div>
+          </div>
+        </div>
+      </nav>
+    <div class="ft">
+      <footer class="footer">
+        <div class="ft-cont">
+          <nav class="ft-nav">
+            <ul class="ft-ul">
+              <li class="ft-link">INSTAGRAMについて</li>
+              <li class="ft-link">サポート</li>
+              <li class="ft-link">プレス</li>
+              <li class="ft-link">API</li>
+              <li class="ft-link">求人</li>
+              <li class="ft-link">プライバシー</li>
+              <li class="ft-link">利用規約</li>
+              <li class="ft-link">ディレクトリ</li>
+              <li class="ft-link">プロフィール</li>
+              <li class="ft-link">ハッシュタグ</li>
+              <li class="ft-link">言語</li>
+            </ul>
+          </nav>
+          <span>
+            ©︎2019 SNAPGRAPH.
+          </span>
+        </div>
+      </footer>
+    </div>
     <%= yield %>
   </body>
 </html>
