@@ -2,7 +2,7 @@
   <div class="fc_container">
     <div class="fc_content">
       <%= form_with(model: @feed, url: feeds_path, local: true) do |f| %>
-        <p><%= @feed.content %></p>
+        <%= @feed.content %>
         <%= f.hidden_field :content %>
         <%= image_tag(@feed.image.url) %>
         <%= hidden_field_tag :"cache[image]", @feed.image.cache_name %>
