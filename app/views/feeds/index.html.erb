@@ -1,6 +1,6 @@
 <div class="container-fluid feed">
   <div class="row bg-feed">
-    <div class="col-md-4 col-md-offset-3">
+    <div class="col-4 col-md-offset-3">
       <nav id="side_menu">
         <ul>
           <li class="power"><p class="current_user"><%= link_to 'Profile', user_path(current_user.id) %></p></li>
@@ -20,10 +20,10 @@
         </ul>
       </nav>
     </div>
-    <div class="col-md-4 text-center">
+    <div class="col-4 text-center">
       <% @feeds.each do |feed| %>
       <div class="content feed_index">
-        <ul>
+        <ul class="">
           <li><%= feed.user.name %></li>
           <li><%= feed.content %></li>
             <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
@@ -36,7 +36,7 @@
       </div>
       <% end %>
     </div>
-    <div class="col-md-4">
+    <div class="col-4">
       <div class="navbar">
         <h1>知り合いかも</h1>
         <p><a href="">すべてを見る</a></p>
