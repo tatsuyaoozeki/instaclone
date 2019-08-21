@@ -46,7 +46,7 @@ before_action :ensure_correct_user, only: [:edit, :update]
 
   def ensure_correct_user
     # ログイン中のユーザidと編集したいユーザidが等しくない場合
-    if @current_user.id != params[:id].to_i
+    if current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"
       redirect_to user_path(@user.id)
     end

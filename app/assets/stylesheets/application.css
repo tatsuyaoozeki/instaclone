@@ -26,6 +26,7 @@ body {
   justify-content: space-between;
   height: 100%;
   overflow: scroll;
+  background-color: #fafafa;
 }
 
 .ed_nav {

@@ -7,7 +7,4 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
   has_many :favorites, dependent: :destroy
   has_many :feeds
-  # def feeds
-  #   return Feed.where(user_id: self.id)
-  # end
 end

@@ -10,29 +10,31 @@
           </div>
         </div>
       </div
-        <div class="sh_ed">
-          <h1 class="sh_name"><%= @user.name %></h1>
-          <div class="sh_link">
-            <button class="link_btn">
-              <span class="sh_btn">
-                <i class="fas fa-th"></i>
-              </span>
-            </button>
+        <aticle class="sh_pro">
+          <div class="sh_ed">
+            <h1 class="sh_name"><%= @user.name %></h1>
+            <div class="sh_link">
+              <button class="link_btn">
+                <span class="sh_btn">
+                  <i class="fas fa-th"></i>
+                </span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="sh_ed">
-          <button class="ed_lbtn">
-            <%= link_to 'プロフィールを編集', edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？' } %>
-          </button>
-        </div>
-        <div class="sh_ed">
-          <button class="ed_lbtn">
-            <%= link_to 'HOME', feeds_path %>
-          </button>
-          <button class="ed_lbtn">
-            <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-          </button>
-        </div>
+            <div class="sh_ed">
+              <button class="ed_lbtn">
+                  <%= link_to 'プロフィールを編集', edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？' } %>
+              </button>
+            </div>
+            <div class="sh_ed">
+              <button class="ed_lbtn">
+                <%= link_to 'HOME', feeds_path %>
+              </button>
+              <button class="ed_lbtn">
+                <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+              </button>
+            </div>
+        </aticle>
       </header>
       <section class="sh_feed">
         <a class="sh_t">
@@ -60,22 +62,25 @@
           </span>
         </a>
         <a class="sh_t">
-        <span class="sh_tag">
-          <div class="tag_icon4">
-            <i class="fas fa-user-tag"></i>
-          </div>
-          <span class="tag_name">タグづけされている人</span>
-        </span>
-      </a>
-    </section>
-    <aticle class="garllery_content">
+          <span class="sh_tag">
+            <div class="tag_icon4">
+              <i class="fas fa-user-tag"></i>
+            </div>
+            <span class="tag_name">タグづけされている人</span>
+          </span>
+        </a>
+      </section>
+      <aticle class="garllery_content">
       <div class="ug">
         <ul class="gallery">
           <% @feeds.each do |feed| %>
-            <li class="gallery_items"><%= image_tag(feed.image.url) if feed.image && feed.image.url %></li>
+          <li class="gallery_items"><%= image_tag(feed.image.url) if feed.image && feed.image.url %></li>
           <% end %>
         </ul>
       </div>
-    </aticle>
-  </div>
-</main>
+      </aticle>
+    </div>
+  </main>
+<!-- <p>メールアドレス: <%= @user.email %></p> -->
+
+<!-- </section> -->

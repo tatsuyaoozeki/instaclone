@@ -1,5 +1,6 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @feeds = Feed.all.reverse_order
@@ -64,5 +65,13 @@ class FeedsController < ApplicationController
 
   def set_feed
     @feed = Feed.find(params[:id])
+  end
+
+  def ensure_correct_user
+    # ログイン中のユーザidと編集したいユーザidが等しくない場合
+    if current_user.id != @feed.user.id
+      flash[:notice] = "権限がありません"
+      redirect_to feeds_path
+    end
   end
 end

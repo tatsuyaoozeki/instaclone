@@ -26,10 +26,12 @@
         <ul>
           <li><%= feed.user.name %></li>
           <li><%= feed.content %></li>
-          <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
-          <li><%= link_to '詳細', feed_path(feed.id) %></li>
-          <li><%= link_to '編集', edit_feed_path(feed.id), data: { confirm: '本当に編集していいですか？' } %></li>
-          <li><%= link_to '削除', feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></li>
+            <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
+          <% if current_user == feed.user %>
+            <li><%= link_to '詳細', feed_path(feed.id) %></li>
+            <li><%= link_to '編集', edit_feed_path(feed.id), data: { confirm: '本当に編集していいですか？' } %></li>
+            <li><%= link_to '削除', feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></li>
+          <% end %>
         </ul>
       </div>
       <% end %>

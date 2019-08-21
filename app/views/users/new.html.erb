@@ -7,48 +7,53 @@
           <form class="xform">
             <h2>友達の写真や動画をチェックしよう</h2>
           </form>
+
           <div class="fb-btn">
             <button class="fb-link" type="button"><i class="fab fa-facebook-square fb-icon"></i>Facebookでログイン</button>
           </div>
+
           <div class="select-form">
             <div class="bord"></div>
             <p class="sel">または</p>
             <div class="bord"></div>
           </div>
+
           <%= form_with(model: @user, local: true) do |f| %>
-          <dt>
-            <dd><%= f.email_field :email, class:"form-control", placeholder:"メールアドレスまたは電話番号" %></dd>
+            <dt>
+              <dd><%= f.email_field :email, class:"form-control", placeholder:"メールアドレスまたは電話番号" %></dd>
 
-            <dd><%= f.text_field :name, class:"form-control", placeholder:"フルネーム" %></dd>
+              <dd><%= f.text_field :name, class:"form-control", placeholder:"フルネーム" %></dd>
 
-            <dd><%= f.password_field :password, class:"form-control", placeholder:"パスワード" %></dd>
+              <dd><%= f.password_field :password, class:"form-control", placeholder:"パスワード" %></dd>
 
-            <dd><%= f.password_field :password_confirmation,class:"form-control", placeholder:"パスワード(確認用)" %></dd>
+              <dd><%= f.password_field :password_confirmation,class:"form-control", placeholder:"パスワード(確認用)" %></dd>
 
-            <dd><%= f.submit "登録する", class: "btn btn-block" %></dd>
-          </dt>
+              <dd><%= f.submit "登録する", class: "btn btn-block" %></dd>
+            </dt>
           <% end %>
-        <% if @user.errors.any? %>
-          <div id="error_explanation">
-            <ul>
-            <% @user.errors.full_messages.each do |message| %>
-              <li class="er-mg"><%= message %></li>
-            <% end %>
-            </ul>
+
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li class="er-mg"><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <p class="policy">登録することで、Facebookの<a href="#">利用<br>規約、データに関するポリシー、<br>Cookieポリシー</a>に同意するものと<br>します。</p>
+
+        </div>
+          <div class="acount">
+            <p class="login-link">アカウントをお持ちですか？<%= link_to "ログインする", new_session_path %></p>
           </div>
-        <% end %>
-        <p class="policy">登録することで、Facebookの<a href="#">利用<br>規約、データに関するポリシー、<br>Cookieポリシー</a>に同意するものと<br>します。</p>
-        </div>
-        <div class="acount">
-          <p class="login-link">アカウントをお持ちですか？<%= link_to "ログインする", new_session_path %></p>
-        </div>
-        <div class="dl">
-          <p>ダウンロード</p>
-          <aside class="dl-icon">
-            <div class="app"></div>
-          <div class="google"></div>
-        </aside>
+          <div class="dl">
+            <p>ダウンロード</p>
+            <aside class="dl-icon">
+              <div class="app"></div>
+              <div class="google"></div>
+            </aside>
+          </div>
       </div>
-    </div>
   </article>
 </div>

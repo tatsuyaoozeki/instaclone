@@ -1,51 +1,53 @@
-  <main class="ed_content">
-    <div class="BvMHM EzUlV">
-      <ul class="wW1cu">
-        <li><a href="" class="h-aRd">プロフィール編集</a></li>
-        <li><a href="" class="h-aRd">パスワードを変更</a></li>
-        <li><a href="" class="h-aRd">許可されたアプリ</a></li>
-        <li><a href="" class="h-aRd">メールまたはSMS</a></li>
-        <li><a href="" class="h-aRd">連絡先の管理</a></li>
-        <li><a href="" class="h-aRd">プライバシーとセキュリティ</a></li>
-        <li><a href="" class="h-aRd">ログインアクティビティ</a></li>
-      </ul>
-      <article class="ed_article">
-        <div class="ed_bar">
-          <div class="ed_pro">
-            <div class="M-jxE">
-              <div class="IalUJ">
-                <div class="ed_img">
-                  <%= image_tag(@user.image_name.thumb.url) if @user.image_name && @user.image_name.url %>
-                </div>
+<main class="ed_content">
+  <div class="BvMHM EzUlV">
+    <ul class="wW1cu">
+      <li><a href="" class="h-aRd">プロフィール編集</a></li>
+      <li><a href="" class="h-aRd">パスワードを変更</a></li>
+      <li><a href="" class="h-aRd">許可されたアプリ</a></li>
+      <li><a href="" class="h-aRd">メールまたはSMS</a></li>
+      <li><a href="" class="h-aRd">連絡先の管理</a></li>
+      <li><a href="" class="h-aRd">プライバシーとセキュリティ</a></li>
+      <li><a href="" class="h-aRd">ログインアクティビティ</a></li>
+    </ul>
+    <article class="ed_article">
+      <div class="ed_bar">
+        <div class="ed_pro">
+          <div class="M-jxE">
+            <div class="IalUJ">
+              <div class="ed_img">
+                <%= image_tag(@user.image_name.thumb.url) if @user.image_name && @user.image_name.url %>
               </div>
             </div>
-            <h1 class="XX1Wc">
-              <%= @user.name %>
-            </h1>
           </div>
-          <%= form_with(model: @user, local: true) do |f| %>
-          <div class="ed_row">
-            <div class="eE-OA">
-              <div class="ed_l"><%= f.label :name %></div>
-              <div class="ed_f"><%= f.text_field :name, class: "form_control" %></div>
-            </div>
-            <div class="eE-OA">
-              <div class="ed_l"><%= f.label :email %></div>
-              <div class="ed_f"><%= f.email_field :email, class: "form_control" %></div>
-            </div>
-            <div class="eE-OA">
-              <div class="ed_l"><%= f.label :image_name %></div>
-              <div class="ed_f"><%= f.file_field :image_name %></div>
-            </div>
-            <div class="eE-OA">
-              <div class="ed_l"><%= f.label :password %></div>
-              <div class="ed_f"><%= f.password_field :password, class: "form_control" %></div>
-            </div>
-            <div class="eE-OA">
-              <div class="ed_l"><%= f.label :password_confirmation %></div>
-              <div class="ed_f"><%= f.password_field :password_confirmation, class: "form_control" %></div>
-            </div>
+          <h1 class="XX1Wc">
+            <%= @user.name %>
+          </h1>
+        </div>
+
+        <%= form_with(model: @user, local: true) do |f| %>
+        <div class="ed_row">
+          <div class="eE-OA">
+            <div class="ed_l"><%= f.label :name %></div>
+            <div class="ed_f"><%= f.text_field :name, class: "form_control" %></div>
           </div>
+          <div class="eE-OA">
+            <div class="ed_l"><%= f.label :email %></div>
+            <div class="ed_f"><%= f.email_field :email, class: "form_control" %></div>
+          </div>
+          <div class="eE-OA">
+            <div class="ed_l"><%= f.label :image_name %></div>
+            <div class="ed_f"><%= f.file_field :image_name %></div>
+          </div>
+          <div class="eE-OA">
+            <div class="ed_l"><%= f.label :password %></div>
+            <div class="ed_f"><%= f.password_field :password, class: "form_control" %></div>
+          </div>
+          <div class="eE-OA">
+            <div class="ed_l"><%= f.label :password_confirmation %></div>
+            <div class="ed_f"><%= f.password_field :password_confirmation, class: "form_control" %></div>
+          </div>
+        </div>
+
           <div class="eE-OA">
             <div class="ed_l"></div>
             <div class="ed_f"><%= f.submit "送信する" %></div>
@@ -64,6 +66,7 @@
       </article>
     </div>
   </main>
+</section>
 <div class="ft">
   <footer class="footer">
     <div class="ft-cont">

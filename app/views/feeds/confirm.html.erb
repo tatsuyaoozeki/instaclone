@@ -1,12 +1,16 @@
-<h3>以下の内容で、送信する。</h3>
+<div class="cf_container">
+  <div class="col-md-3 text-center">
+    <!-- <h3>以下の内容で、送信する。</h3> -->
 
-<%= form_with(model: @feed, url: feeds_path, local: true) do |f| %>
-  <%= image_tag(@feed.image.url) %>
-  <%= hidden_field_tag :"cache[image]", @feed.image.cache_name %>
-  <%= f.hidden_field :content %>
-  <%= f.hidden_field :image_cache %>
-  <p>本文:<%= @feed.content %></p>
-  <%= f.submit  "投稿する" %>
+    <%= form_with(model: @feed, url: feeds_path, local: true) do |f| %>
+      <%= image_tag(@feed.image.url) %>
+      <%= hidden_field_tag :"cache[image]", @feed.image.cache_name %>
+      <%= f.hidden_field :content %>
+      <%= f.hidden_field :image_cache %>
+      <%= @feed.content %></p>
+      <%= f.submit  "投稿する" %>
 
-  <%= f.submit "戻る", name: 'back' %>
-<% end %>
+      <%= f.submit "戻る", name: 'back' %>
+    <% end %>
+  </div>
+</div>
