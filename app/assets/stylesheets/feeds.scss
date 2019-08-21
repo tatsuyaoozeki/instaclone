@@ -14,9 +14,9 @@
   padding-top: 3em;
 }
 
-.col-4 {
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
+.row.flex{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #side_menu{
