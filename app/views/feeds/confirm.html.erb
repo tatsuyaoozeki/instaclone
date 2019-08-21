@@ -1,8 +1,6 @@
 <div class="feed_confirm">
   <div class="fc_container">
     <div class="fc_content">
-      <!-- <h3>以下の内容で、送信する。</h3> -->
-
       <%= form_with(model: @feed, url: feeds_path, local: true) do |f| %>
         <p><%= @feed.content %></p>
         <%= f.hidden_field :content %>

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* サイドメニュー設定 */
-div.container-fluid.feed {
+.container-fluid.feed {
   height: 100%;
   width: 100%;
   padding: 3em 0 0 0;
@@ -14,13 +14,13 @@ div.container-fluid.feed {
   padding-top: 3em;
 }
 
-nav#side_menu{
+#side_menu{
   text-align: left;
   margin-left: 45%;
 }
 
 /* コンテンツメニューを高さを合わせるため */
-nav#side_menu ul{
+#side_menu ul{
   margin-top: 0;
   padding-left: 10%;
 }
@@ -68,7 +68,7 @@ i.fas fa-u.ser-circle {
 }
 
 // ツイートの設定
-div.content{
+div.content.feed_index {
   background-color: #fff;
   border-radius: 0.8em;
   padding: 0;
@@ -78,12 +78,12 @@ div.content{
   position: relative;
 }
 
-div.content ul {
+.content.feed_index ul {
   padding: 0;
 }
 
 // 黒点を消す
-div.content li{
+.content.feed_index li{
   list-style-type: none;
 }
 
