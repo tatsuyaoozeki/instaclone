@@ -23,7 +23,7 @@
     <div class="col-4 text-center">
       <% @feeds.each do |feed| %>
       <div class="content feed_index">
-        <ul class="">
+        <ul>
           <li><%= feed.user.name %></li>
           <li><%= feed.content %></li>
             <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
