@@ -85,9 +85,14 @@ div.content.feed_index {
 }
 
 // 黒点を消す
-.content.feed_index li{
+.content.feed_index li {
   list-style-type: none;
 }
+
+.link_left {
+  text-align: left;
+}
+
 
 // 友人かもが表示されるナビゲーションバー表示
 .navbar {
